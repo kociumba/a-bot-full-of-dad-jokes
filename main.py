@@ -59,9 +59,7 @@ async def on_message(message):
             await message.channel.send(f"""Member count: {id.member_count} """)
 
     if message.content.startswith('$help'):
-        await message.author.send(
-            'proper help embeed in progress, for now just use the commands: $joke, $dm me'
-        )
+        await message.author.send'proper help embeed in progress, for now just use the commands: $joke, $dm,$beemovie')
         print(f"""just instructed {message.author}""")
         help_dm_object = message.author
         help_dm_object_str = str(help_dm_object)
@@ -69,6 +67,11 @@ async def on_message(message):
         help_file.write(help_dm_object_str + ';   ')
         help_file.close()
         await message.channel.purge(limit=1)
-
+        
+    if message.content.startswith("$beemovie"):
+      await message.author.send("""According to all known laws of aviation, there is no way a bee should be able to fly.""")
+   
+    if message.content.startswith("$beemovie_full"):
+      await message.author.send("""https://gist.githubusercontent.com/MattIPv4/045239bc27b16b2bcf7a3a9a4648c08a/raw/2411e31293a35f3e565f61e7490a806d4720ea7e/bee%2520movie%2520script""")
 
 client.run(os.getenv("TOKEN"))
