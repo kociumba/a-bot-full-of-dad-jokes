@@ -59,7 +59,7 @@ async def on_message(message):
             await message.channel.send(f"""Member count: {id.member_count} """)
 
     if message.content.startswith('$help'):
-        await message.author.send'proper help embeed in progress, for now just use the commands: $joke, $dm,$beemovie')
+        await message.author.send('proper help embeed in progress, for now just use the commands: $joke, $dm,$beemovie')
         print(f"""just instructed {message.author}""")
         help_dm_object = message.author
         help_dm_object_str = str(help_dm_object)
